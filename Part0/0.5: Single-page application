@@ -1,0 +1,32 @@
+title 0.5 Spa
+
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+Server-->Browser: HTTP-code
+
+note over Browser
+The browser receives the HTML-code that 
+defines the content and structure of the 
+page from the server with an HTTP GET request
+The HTML-code causes the browser to request 
+the main.css and spa.js files.
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+Server-->Browser: spa.js
+
+note over Browser
+The browser executes the .js script where 
+it requests JSON data from the server
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser: [{content: "", date: ""}]
+
+note over Browser
+When the JSON data arrives, the 
+browser executes an event handler 
+displaying the data on the screen.
+end note
