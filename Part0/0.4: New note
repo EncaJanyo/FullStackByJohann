@@ -1,0 +1,50 @@
+title 0.4 New note
+
+note over Browser 
+Pressing the save button sends the data 
+entered in the form to the server
+end note
+
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note over Server
+The server responds to the request 
+by sending a redirection code.
+end note
+
+Server-->Browser: HTTP-code
+
+note over Browser
+The browser receives the redirection code 
+from the server requesting to reload the header
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+Server-->Browser: HTTP-code
+
+note over Browser
+The browser receives the HTML-code that 
+defines the content and structure of the 
+page from the server with an HTTP GET request
+The HTML-code causes the browser to request 
+the main.css and main.js files.
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+Server-->Browser: main.js
+
+note over Browser
+The browser executes the .js script where 
+it requests JSON data from the server
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser: [{content: "", date: ""}]
+
+note over Browser
+When the JSON data arrives, the 
+browser executes an event handler 
+displaying the data on the screen.
+end note
