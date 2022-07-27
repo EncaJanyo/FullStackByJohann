@@ -1,0 +1,14 @@
+title 0.6 Spa New Note
+
+
+note over Browser
+On pressing the save button, the form information 
+is handled via the .js file, the code in the .js 
+file creates a note from the form, adds it to the 
+note list, regenerates the note list on the screen 
+without the need to reload the page and finally 
+sends the new note to the server.
+end note
+
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+Server-->Browser: {"message":"note created"}
